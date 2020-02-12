@@ -1,0 +1,37 @@
+<%=  form_with model: @book do |form| %>
+
+<div class="field">
+    <%= form.label :name_book %>
+    <%= form.text_field :name_book, placeholder: "Nombre del libro" %>
+</div>
+
+<div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author, placeholder: "Autor del libro" %>
+</div>
+
+<div class="field">
+    <%= form.label :date_published %>
+    <%= form.date_field :date_published, placeholder: "Fecha de publicación" %>
+</div>
+
+<div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender, placeholder: "Genero del libro" %>
+</div>
+
+<div class="field">
+    <%= form.label :link_download %>
+    <%= form.text_field :link_download, placeholder: "Link de descarga" %>
+</div>
+
+<div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, placeholder: "Portada del libro" %>
+</div>
+
+<div class="actions">
+    <%= form.submit %>
+</div>
+
+<% end %>

@@ -1,2 +1,11 @@
-aqui estan todos los libros
-
+<div>
+<% @books.each do |book|%>
+<% if book.image.attached? %>
+    <%= image_tag(book.image,style: "width: 100px") %>
+    <HR width="00%">
+<% end %>
+<%= link_to(book.name_book,"/books/#{book.id}")%> <br>
+<%= book.author %> <br>
+<% end %>
+</div>
+<%= button_to "Agregar Libro", "/books/new", method: :get %>

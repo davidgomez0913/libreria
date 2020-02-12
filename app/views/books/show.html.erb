@@ -1,0 +1,15 @@
+<div>
+<% if @book.image.attached? %>
+    <%= image_tag(@book.image,style: "width: 100px") %>
+    <HR width="00%">
+<% end %>
+<%= @book.name_book %><br> 
+<%= @book.author %> <br> 
+<%= @book.date_published %> <br>
+<%= @book.gender %> <br>
+<%= @book.link_download %> <br>
+
+</div>
+<%= button_to "Delete", @book, method: :delete %>
+<%= button_to "Edit", "/books/#{@book.id}/edit", method: :get %>
+<%= button_to "Mostrar Catalogo", "/books#index", method: :get %>
