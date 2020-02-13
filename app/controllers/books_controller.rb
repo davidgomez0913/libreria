@@ -2,6 +2,7 @@ class BooksController < ApplicationController
     
     def index
         @books=Book.all
+        book = Book.search(params[:search])
     end
     
     def show
