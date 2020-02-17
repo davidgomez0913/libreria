@@ -1,0 +1,28 @@
+html{
+    
+}
+body{
+    background-color: #c5e2ed;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+}
+.libros {
+    min-width: 250px;
+    max-width: 250px;
+    display: block;
+    padding: 20px;
+    border:1px solid #999;
+    margin: 10px;
+    /*background-color: rgba(255,255,255,0.3);*/
+}
+
+.inicio {
+    padding: 20px;
+    font-size: 30px;
+}
+.busqueda {
+    padding: 30px;
+}
+.field {
+    padding: 10px;
+    text-align: center;
+}

@@ -1,21 +1,25 @@
 <%= form_tag books_path, :method => 'get' do %>
   
-  <div class="form-group">
+  <div class="busqueda">
     <%= label_tag("Buscar: ")  %>
-    <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Nombre del libro" %>
-    <%= submit_tag "Buscar", :name_book => nil %>
+    <%= text_field_tag :search, params[:search], placeholder: "Nombre de la busqueda"  %>
+    <%= select(:filter, params[:filter], [["Nombre del libro", 1], ["Autor", 2], ["Genero", 3]])%>
+    <%= submit_tag "Buscar", :name_book => nil, :author => nil,:gender => nil %>
     <HR width="100%">
   </div>
 <% end %>
 
-<div>
+<div class="d-flex justify-content-center flex-wrap" >
 <% @books.each do |book|%>
+<div class="text-center libros">
 <% if book.image.attached? %>
-    <%= image_tag(book.image,style: "width: 100px") %>
-    <HR width="00%">
+    <%= image_tag(book.image,style: "width: 100px") %><br>
 <% end %>
 <%= link_to(book.name_book,"/books/#{book.id}")%> <br>
 <%= book.author %> <br>
+    <HR width="00%">
+</div>
 <% end %>
 </div>
 <%= button_to "Agregar Libro", "/books/new", method: :get %>
+<%= button_to "Mostrar Catalogo", "/books#index", method: :get %>
